@@ -1,8 +1,12 @@
-* {
-  box-sizing: border-box;
+.slides {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-body {
-  margin: auto;
-
+input {
+  width: 0;
+  height: 0;
 }
+
+@media (max-width: 768) {}
