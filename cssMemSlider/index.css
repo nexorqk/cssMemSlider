@@ -9,10 +9,18 @@ body {
   background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
 }
 
+h1 {
+  margin: 1.5rem 0;
+  color: rgb(0, 130, 252);
+
+}
+
 .slider {
   margin: 0 auto;
   width: 70%;
-  height: 80vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .slides {
@@ -22,6 +30,7 @@ body {
   overflow: hidden;
   display: flex;
   margin-bottom: 2rem;
+  border: 1rem solid rgba(54, 3, 95, 0.5);
 }
 
 .slides-subtitle {
@@ -30,6 +39,7 @@ body {
   height: 100%;
   overflow: hidden;
   display: flex;
+  align-items: center;
 }
 
 .slide {
@@ -84,14 +94,15 @@ input[type='radio'] {
 .bottom-container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 
-#s1:checked~.bottom-container .controls .a1 .c1,
-#s2:checked~.bottom-container .controls .a2 .c2,
-#s3:checked~.bottom-container .controls .a3 .c3,
-#s4:checked~.bottom-container .controls .a4 .c4 {
-  background: rgb(104, 98, 98);
+#s1:checked~.bottom-container .controls .label .c1,
+#s2:checked~.bottom-container .controls .label .c2,
+#s3:checked~.bottom-container .controls .label .c3,
+#s4:checked~.bottom-container .controls .label .c4 {
+  background: rgb(98, 52, 224);
 }
 
 .slider .label__circle:hover {
@@ -116,4 +127,25 @@ input[type='radio'] {
 #s4:checked~.slides .slide_1,
 #s4:checked~.bottom-container .slides-subtitle .t1 {
   margin-left: -300%;
+}
+
+@media (max-width: 768px) {
+  .slider {
+    width: 90%;
+    height: auto;
+  }
+
+  .bottom-container {
+    flex-direction: column;
+  }
+
+  .controls {
+    order: -1;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .slides-subtitle {
+    width: 100%;
+  }
 }
